@@ -31,8 +31,7 @@ jobs:
             node-version: 16
 
       # Runs a set of commands using the runners shell
-      - name: installing surge
-        run: npm install -globally surge
-      - name: deoplying using surge
-        run: surge ./ barbarous-force.surge.sh --token $ {{secrets.SURGE_TOKEN}}
-          
+      - name: Install Surge
+        run: npm install -g surge
+      - name: Run surge
+        run: surge ./ https://barbarous-force.surge.sh/ --token ${{ secrets.SURGE_TOKEN }}
